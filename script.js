@@ -1,7 +1,7 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycbzVpFAXVJcwi3oWvYYAE2wMHommRKpCXjI9WHykSKc_qInY2_8SGSE1jUlZymwocUkC6g/exec";
 const perHalaman = 1;
-let waktu = 1800;
+let waktu = 3600;
 
 let halaman = 0;
 let timer;
