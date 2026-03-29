@@ -113,6 +113,34 @@
         font-size: 13px;
         color: #888;
       }
+      .btn-link {
+        text-decoration: none;
+      }
+
+      .btn-pembahasan {
+        background: linear-gradient(135deg, #ff3b3b, #b00000);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 15px rgba(192, 0, 0, 0.3);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-pembahasan:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 10px 20px rgba(192, 0, 0, 0.4);
+      }
+
+      .btn-pembahasan:active {
+        transform: scale(0.97);
+      }
     </style>
   </head>
 
@@ -141,12 +169,10 @@
         <div class="score" id="v">0</div>
       </div>
       <br />
-      <a target="_blank" href="review.html">
-        <button>Lihat Jawaban</button>
+
+      <a target="_blank" href="pembahasan.html" class="btn-link">
+        <button class="btn-pembahasan">Lihat Pembahasan</button>
       </a>
-      <a target="_blank" href="pembahasan.html">
-        <button>Lihat Pembahasan</button></a
-      >
       <div class="note">
         Terima kasih telah mengikuti ujian.<br />
         Tetap junjung tinggi nilai Pancasila dan nasionalisme
