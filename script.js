@@ -10,8 +10,95 @@ let sudahSubmit = false;
 let jawaban = {};
 
 const soal = [
+  // 🔵 SOAL TIU (20 SOAL)
+
   {
-    t: "Semua A adalah B. Sebagian B adalah C. Maka...",
+    t: "Sinonim dari kata 'Integritas' adalah…",
+    p: ["Kejujuran", "Keberanian", "Kepintaran", "Kekuatan"],
+    j: 0,
+    e: "Integritas berkaitan dengan kejujuran dan konsistensi nilai.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Antonim dari kata 'Optimis' adalah…",
+    p: ["Pesimis", "Semangat", "Yakin", "Percaya"],
+    j: 0,
+    e: "Optimis berlawanan dengan pesimis.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Jika 3x + 6 = 18, maka nilai x adalah…",
+    p: ["2", "3", "4", "6"],
+    j: 2,
+    e: "3x = 12, jadi x = 4.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Deret angka: 2, 4, 8, 16, …",
+    p: ["18", "24", "32", "30"],
+    j: 2,
+    e: "Pola dikali 2 → 32.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Semua anggota tim disiplin. Andi adalah anggota tim. Maka…",
+    p: [
+      "Andi tidak disiplin",
+      "Andi mungkin disiplin",
+      "Andi pasti disiplin",
+      "Tidak bisa disimpulkan",
+    ],
+    j: 2,
+    e: "Logika silogisme: semua anggota tim disiplin → Andi disiplin.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Jika hari ini Senin, maka 10 hari lagi adalah…",
+    p: ["Rabu", "Kamis", "Jumat", "Sabtu"],
+    j: 0,
+    e: "10 mod 7 = 3 → Senin + 3 hari = Rabu.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Analogi: Buku : Membaca = Pisau : …",
+    p: ["Menulis", "Memotong", "Makan", "Menggambar"],
+    j: 1,
+    e: "Pisau digunakan untuk memotong.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Jika 5 orang dapat menyelesaikan pekerjaan dalam 10 hari, maka 10 orang akan menyelesaikan dalam…",
+    p: ["5 hari", "10 hari", "20 hari", "2 hari"],
+    j: 0,
+    e: "Berbanding terbalik → 5 hari.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Deret angka: 3, 6, 11, 18, …",
+    p: ["25", "27", "29", "30"],
+    j: 1,
+    e: "Pola +3, +5, +7 → berikutnya +9 = 27.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Sinonim dari kata 'Efisien' adalah…",
+    p: ["Cepat", "Tepat guna", "Kuat", "Besar"],
+    j: 1,
+    e: "Efisien berarti tepat guna dan tidak boros.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Jika semua A adalah B dan sebagian B adalah C, maka…",
     p: [
       "Semua A adalah C",
       "Sebagian A adalah C",
@@ -19,329 +106,306 @@ const soal = [
       "Semua C adalah A",
     ],
     j: 2,
-    e: "A ⊂ B, B ∩ C ≠ ∅, belum tentu A termasuk bagian B yang C.",
+    e: "Tidak cukup informasi untuk memastikan hubungan A dan C.",
+    lvl: "hard",
   },
+
   {
-    t: "Deret: 2, 6, 7, 21, 22, 66, ...",
-    p: ["67", "68", "69", "70"],
+    t: "5, 10, 20, 40, …",
+    p: ["60", "70", "80", "90"],
+    j: 2,
+    e: "Pola dikali 2 → 80.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Jika 2x = 8 dan y = x + 3, maka nilai y adalah…",
+    p: ["5", "6", "7", "8"],
+    j: 2,
+    e: "x = 4 → y = 7.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Semua siswa rajin belajar. Budi tidak rajin belajar. Maka…",
+    p: [
+      "Budi siswa",
+      "Budi bukan siswa",
+      "Budi rajin",
+      "Tidak dapat disimpulkan",
+    ],
+    j: 1,
+    e: "Kontraposisi: jika tidak rajin → bukan siswa.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Deret: 1, 1, 2, 3, 5, …",
+    p: ["6", "7", "8", "9"],
+    j: 2,
+    e: "Fibonacci → 8.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Antonim dari 'Kompleks' adalah…",
+    p: ["Rumit", "Sederhana", "Sulit", "Besar"],
+    j: 1,
+    e: "Kompleks berlawanan dengan sederhana.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Jika harga 1 buku Rp5.000, maka harga 12 buku adalah…",
+    p: ["50.000", "60.000", "65.000", "70.000"],
+    j: 1,
+    e: "12 x 5.000 = 60.000.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Semua P adalah Q. Semua Q adalah R. Maka…",
+    p: [
+      "Semua P adalah R",
+      "Sebagian P adalah R",
+      "Tidak ada hubungan",
+      "Semua R adalah P",
+    ],
     j: 0,
-    e: "Pola ×3, +1 berulang.",
+    e: "Silogisme berantai → P ⊂ Q ⊂ R.",
+    lvl: "medium",
+  },
+
+  {
+    t: "Deret angka: 7, 14, 28, 56, …",
+    p: ["84", "96", "112", "120"],
+    j: 2,
+    e: "Pola dikali 2 → 112.",
+    lvl: "easy",
+  },
+
+  {
+    t: "Jika A lebih tinggi dari B, dan B lebih tinggi dari C, maka…",
+    p: [
+      "C lebih tinggi dari A",
+      "A lebih tinggi dari C",
+      "B paling tinggi",
+      "Tidak bisa ditentukan",
+    ],
+    j: 1,
+    e: "Logika perbandingan → A > B > C.",
+    lvl: "easy",
+  },
+  // === TAMBAHAN 30 SOAL TIU ===
+  {
+    t: "Jika 3x + 5 = 20, maka nilai x adalah …",
+    p: ["3", "4", "5", "6"],
+    j: 2,
+    e: "3x = 15 → x = 5",
   },
   {
-    t: "Jika semua X adalah Y dan tidak ada Y yang Z, maka...",
+    t: "Semua siswa rajin belajar. Andi adalah siswa. Maka …",
+    p: [
+      "Andi malas belajar",
+      "Andi rajin belajar",
+      "Andi tidak diketahui",
+      "Andi bukan siswa",
+    ],
+    j: 1,
+    e: "Logika silogisme: semua siswa rajin → Andi termasuk.",
+  },
+  {
+    t: "Jika 5 orang dapat menyelesaikan pekerjaan dalam 10 hari, maka 10 orang menyelesaikan dalam …",
+    p: ["2 hari", "5 hari", "10 hari", "20 hari"],
+    j: 1,
+    e: "Berbanding terbalik → 10 orang = 5 hari.",
+  },
+  {
+    t: "Sinonim dari kata 'akurat' adalah …",
+    p: ["Tepat", "Salah", "Lambat", "Buruk"],
+    j: 0,
+    e: "Akurat = tepat.",
+  },
+  {
+    t: "Antonim dari 'optimis' adalah …",
+    p: ["Semangat", "Pesimis", "Berani", "Percaya"],
+    j: 1,
+    e: "Optimis lawannya pesimis.",
+  },
+  {
+    t: "2, 4, 8, 16, …",
+    p: ["24", "30", "32", "36"],
+    j: 2,
+    e: "Pola ×2 → 32",
+  },
+  {
+    t: "Jika hari ini Senin, maka 10 hari lagi adalah …",
+    p: ["Rabu", "Kamis", "Jumat", "Sabtu"],
+    j: 1,
+    e: "10 mod 7 = 3 → Senin +3 = Kamis",
+  },
+  {
+    t: "Jika semua A adalah B dan semua B adalah C, maka …",
+    p: [
+      "Semua A adalah C",
+      "Semua C adalah A",
+      "Sebagian A bukan C",
+      "Tidak bisa ditentukan",
+    ],
+    j: 0,
+    e: "Logika transitif.",
+  },
+  {
+    t: "Harga sebuah buku Rp20.000, diskon 25%. Harga setelah diskon adalah …",
+    p: ["Rp10.000", "Rp12.000", "Rp15.000", "Rp18.000"],
+    j: 2,
+    e: "Diskon 5.000 → sisa 15.000",
+  },
+  {
+    t: "Jika 1/2 + 1/4 = …",
+    p: ["1/6", "2/6", "3/4", "4/6"],
+    j: 2,
+    e: "Samakan penyebut → 2/4 + 1/4 = 3/4",
+  },
+  {
+    t: "Kalimat efektif dari 'Saya pergi ke pasar untuk membeli sayur-sayuran' adalah …",
+    p: [
+      "Saya ke pasar beli sayur",
+      "Saya pergi ke pasar membeli sayur",
+      "Saya pasar membeli sayur",
+      "Saya beli sayur saja",
+    ],
+    j: 1,
+    e: "Struktur paling tepat.",
+  },
+  {
+    t: "3, 9, 27, 81, …",
+    p: ["162", "243", "256", "300"],
+    j: 1,
+    e: "Pola ×3 → 243",
+  },
+  {
+    t: "Jika x = 4, maka 2x² = …",
+    p: ["16", "24", "32", "36"],
+    j: 2,
+    e: "2 × 16 = 32",
+  },
+  {
+    t: "Sebuah persegi memiliki sisi 8 cm. Luasnya adalah …",
+    p: ["16", "32", "64", "128"],
+    j: 2,
+    e: "s² = 64",
+  },
+  {
+    t: "Semua guru disiplin. Budi tidak disiplin. Maka …",
+    p: ["Budi guru", "Budi bukan guru", "Budi rajin", "Tidak diketahui"],
+    j: 1,
+    e: "Kontrapositif.",
+  },
+  {
+    t: "Antonim dari 'luas' adalah …",
+    p: ["Sempit", "Panjang", "Lebar", "Besar"],
+    j: 0,
+    e: "Luas lawannya sempit.",
+  },
+  {
+    t: "Jika 7 orang makan 7 roti dalam 7 menit, maka 1 orang makan 1 roti dalam …",
+    p: ["1 menit", "7 menit", "49 menit", "14 menit"],
+    j: 1,
+    e: "Konsep tetap → 7 menit",
+  },
+  {
+    t: "12 : 3 = 4, maka 48 : 6 = …",
+    p: ["6", "7", "8", "9"],
+    j: 2,
+    e: "48 ÷ 6 = 8",
+  },
+  {
+    t: "Kata 'efisien' berarti …",
+    p: ["Cepat", "Tepat guna", "Boros", "Lambat"],
+    j: 1,
+    e: "Efisien = tepat guna.",
+  },
+  {
+    t: "2, 5, 10, 17, …",
+    p: ["24", "26", "28", "30"],
+    j: 1,
+    e: "Pola +3, +5, +7 → +9 = 26",
+  },
+  {
+    t: "Jika 15% dari 200 adalah …",
+    p: ["20", "25", "30", "35"],
+    j: 2,
+    e: "0.15 × 200 = 30",
+  },
+  {
+    t: "Semua atlet sehat. Sebagian siswa adalah atlet. Maka …",
+    p: [
+      "Semua siswa sehat",
+      "Sebagian siswa sehat",
+      "Tidak ada siswa sehat",
+      "Semua atlet siswa",
+    ],
+    j: 1,
+    e: "Sebagian siswa = atlet → sehat",
+  },
+  {
+    t: "Jika x + 3 = 10, maka x² = …",
+    p: ["36", "49", "64", "81"],
+    j: 1,
+    e: "x=7 → 49",
+  },
+  {
+    t: "Antonim dari 'jujur' adalah …",
+    p: ["Baik", "Bohong", "Tulus", "Benar"],
+    j: 1,
+    e: "Jujur lawannya bohong.",
+  },
+  {
+    t: "Jika 4 jam = 240 menit, maka 2,5 jam = …",
+    p: ["120", "130", "150", "180"],
+    j: 2,
+    e: "2.5 × 60 = 150",
+  },
+  {
+    t: "3² + 4² = …",
+    p: ["12", "16", "25", "49"],
+    j: 2,
+    e: "9 + 16 = 25",
+  },
+  {
+    t: "Kalimat tidak efektif adalah …",
+    p: [
+      "Saya pergi ke sekolah",
+      "Dia makan nasi",
+      "Para siswa-siswa belajar",
+      "Kami membaca buku",
+    ],
+    j: 2,
+    e: "Redundansi.",
+  },
+  {
+    t: "Jika 1 lusin = 12, maka 3 lusin = …",
+    p: ["24", "30", "36", "48"],
+    j: 2,
+    e: "3 × 12 = 36",
+  },
+  {
+    t: "Deret: 5, 10, 20, 40, …",
+    p: ["60", "70", "80", "90"],
+    j: 2,
+    e: "×2 → 80",
+  },
+  {
+    t: "Jika semua X adalah Y dan sebagian Y adalah Z, maka …",
     p: [
       "Semua X adalah Z",
       "Sebagian X adalah Z",
       "Tidak ada X yang Z",
-      "Semua Z adalah X",
-    ],
-    j: 2,
-    e: "X ⊂ Y dan Y tidak beririsan Z.",
-  },
-  {
-    t: "Deret: 1, 4, 10, 22, 46, ...",
-    p: ["70", "82", "94", "96"],
-    j: 2,
-    e: "Pola ×2+2.",
-  },
-  {
-    t: "3 pekerja 6 hari, 6 pekerja = ...",
-    p: ["2", "3", "4", "6"],
-    j: 1,
-    e: "Perbandingan terbalik.",
-  },
-  {
-    t: "Semua burung bersayap. Sebagian bersayap tidak terbang.",
-    p: [
-      "Semua burung terbang",
-      "Sebagian burung tidak terbang",
-      "Tidak dapat disimpulkan",
-      "Semua tak terbang bukan burung",
-    ],
-    j: 2,
-    e: "Tidak pasti burung termasuk subset itu.",
-  },
-  {
-    t: "A, C, F, J, O, ...",
-    p: ["T", "U", "V", "W"],
-    j: 1,
-    e: "+2,+3,+4,+5,+6",
-  },
-  {
-    t: "Semua P ⊂ Q ⊂ R, maka...",
-    p: [
-      "Semua P adalah R",
-      "Sebagian R adalah P",
-      "Semua R adalah P",
       "Tidak dapat disimpulkan",
     ],
-    j: 0,
-    e: "Transitif.",
-  },
-  {
-    t: "5,10,20,35,55,...",
-    p: ["70", "80", "85", "90"],
-    j: 1,
-    e: "Selisih naik 5.",
-  },
-  {
-    t: "2x+3=11, y=3x-2",
-    p: ["8", "10", "12", "14"],
-    j: 1,
-    e: "x=4 → y=10.",
-  },
-  {
-    t: "Deret: 4, 12, 36, 108, ...",
-    p: ["216", "324", "432", "540"],
-    j: 1,
-    e: "×3 terus → 108×3 = 324",
-  },
-  {
-    t: "Jika semua A adalah B dan semua B adalah C, maka...",
-    p: [
-      "Semua A adalah C",
-      "Sebagian A adalah C",
-      "Tidak pasti",
-      "Semua C adalah A",
-    ],
-    j: 0,
-    e: "Transitif: A ⊂ B ⊂ C",
-  },
-  {
-    t: "Deret: 5, 7, 11, 17, 25, ...",
-    p: ["33", "35", "37", "39"],
-    j: 1,
-    e: "Selisih +2,+4,+6,+8,+10",
-  },
-  {
-    t: "Jika p → q dan q → r, maka...",
-    p: ["p → r", "r → p", "p ↔ r", "Tidak pasti"],
-    j: 0,
-    e: "Transitif logika",
-  },
-  {
-    t: "2, 3, 6, 7, 14, 15, ...",
-    p: ["28", "30", "32", "34"],
-    j: 0,
-    e: "×2 lalu +1 berulang",
-  },
-  {
-    t: "Jika semua siswa rajin, dan Andi siswa, maka...",
-    p: ["Andi rajin", "Andi tidak rajin", "Tidak pasti", "Semua rajin Andi"],
-    j: 0,
-    e: "Silogisme",
-  },
-  {
-    t: "Deret: 100, 90, 72, 54, ...",
-    p: ["36", "40", "42", "44"],
-    j: 0,
-    e: "-10, -18, -18, -18",
-  },
-  {
-    t: "Umur Ani 2x Budi, jumlah 30",
-    p: ["10 & 20", "12 & 18", "15 & 15", "20 & 10"],
-    j: 0,
-    e: "Budi=10, Ani=20",
-  },
-  {
-    t: "Jika tidak hujan maka kering. Hujan terjadi, maka...",
-    p: ["Kering", "Tidak kering", "Mungkin", "Tidak pasti"],
-    j: 1,
-    e: "Hujan → tidak kering",
-  },
-  {
-    t: "3, 9, 8, 24, 23, ...",
-    p: ["46", "69", "70", "72"],
-    j: 1,
-    e: "×3 lalu -1",
-  },
-
-  {
-    t: "Deret: 2, 4, 8, 16, 32, ...",
-    p: ["48", "56", "64", "72"],
-    j: 2,
-    e: "×2",
-  },
-  {
-    t: "Jika semua P adalah Q, sebagian Q adalah R",
-    p: ["Semua P R", "Sebagian P R", "Tidak pasti", "Semua R P"],
-    j: 2,
-    e: "Tidak cukup info",
-  },
-  {
-    t: "7 orang 3 hari, 1 orang = ...",
-    p: ["21", "18", "15", "10"],
-    j: 0,
-    e: "7×3=21",
-  },
-  {
-    t: "Deret: 1, 3, 6, 10, 15, ...",
-    p: ["20", "21", "22", "23"],
-    j: 1,
-    e: "+2,+3,+4,+5,+6",
-  },
-  {
-    t: "Jika A benar maka B benar. B salah.",
-    p: ["A benar", "A salah", "A mungkin", "Tidak pasti"],
-    j: 1,
-    e: "Kontrapositif",
-  },
-  {
-    t: "Huruf: A, D, H, M, S, ...",
-    p: ["X", "Y", "Z", "W"],
-    j: 1,
-    e: "+3,+4,+5,+6,+7",
-  },
-  {
-    t: "5, 15, 45, ...",
-    p: ["90", "135", "150", "180"],
-    j: 1,
-    e: "×3",
-  },
-  {
-    t: "Deret: 9, 8, 6, 3, -1, ...",
-    p: ["-6", "-7", "-8", "-9"],
-    j: 1,
-    e: "-1,-2,-3,-4,-5",
-  },
-  {
-    t: "Jika semua bunga harum",
-    p: ["Harum bunga", "Semua harum bunga", "Tidak pasti", "Bunga tidak harum"],
-    j: 0,
-    e: "Silogisme",
-  },
-  {
-    t: "10×(5+5)",
-    p: ["50", "80", "100", "120"],
-    j: 2,
-    e: "10×10",
-  },
-
-  {
-    t: "144 ÷ 12",
-    p: ["10", "11", "12", "13"],
-    j: 2,
-    e: "12",
-  },
-  {
-    t: "Deret: 2, 6, 12, 20, ...",
-    p: ["28", "30", "32", "34"],
-    j: 1,
-    e: "+4,+6,+8,+10",
-  },
-  {
-    t: "Jika rajin → pintar, pintar",
-    p: ["Rajin", "Tidak rajin", "Mungkin", "Tidak pasti"],
-    j: 2,
-    e: "Tidak bisa dibalik",
-  },
-  {
-    t: "4² + 3²",
-    p: ["25", "24", "23", "22"],
-    j: 0,
-    e: "16+9",
-  },
-  {
-    t: "8, 24, 12, 36, 18, ...",
-    p: ["54", "48", "42", "60"],
-    j: 0,
-    e: "×3 lalu ÷2",
-  },
-  {
-    t: "Jika semua kucing mamalia",
-    p: [
-      "Mamalia kucing",
-      "Semua mamalia kucing",
-      "Tidak pasti",
-      "Kucing mamalia",
-    ],
     j: 3,
-    e: "Definisi",
-  },
-  {
-    t: "1, 2, 4, 7, 11, ...",
-    p: ["15", "16", "17", "18"],
-    j: 1,
-    e: "+1,+2,+3,+4,+5",
-  },
-  {
-    t: "6×7+8",
-    p: ["50", "52", "54", "56"],
-    j: 1,
-    e: "42+8",
-  },
-  {
-    t: "Deret: 3, 6, 18, 72, ...",
-    p: ["144", "216", "288", "360"],
-    j: 1,
-    e: "×2,×3,×4,×5",
-  },
-  {
-    t: "Jika semua A adalah B, dan B bukan C",
-    p: ["A bukan C", "A adalah C", "Sebagian A C", "Tidak pasti"],
-    j: 0,
-    e: "Logika himpunan",
-  },
-
-  {
-    t: "5! (faktorial)",
-    p: ["100", "110", "120", "130"],
-    j: 2,
-    e: "5×4×3×2×1",
-  },
-  {
-    t: "Deret: 2, 3, 5, 9, 17, ...",
-    p: ["25", "33", "31", "29"],
-    j: 1,
-    e: "×2-1",
-  },
-  {
-    t: "Jika hujan maka banjir, tidak banjir",
-    p: ["Hujan", "Tidak hujan", "Mungkin", "Tidak pasti"],
-    j: 1,
-    e: "Modus tollens",
-  },
-  {
-    t: "1 lusin = ...",
-    p: ["10", "11", "12", "13"],
-    j: 2,
-    e: "12",
-  },
-  {
-    t: "3² + 4²",
-    p: ["20", "24", "25", "26"],
-    j: 2,
-    e: "9+16",
-  },
-  {
-    t: "Deret: 0, 2, 6, 12, 20, ...",
-    p: ["28", "30", "32", "34"],
-    j: 1,
-    e: "+2,+4,+6,+8,+10",
-  },
-  {
-    t: "Jika semua merah warna",
-    p: ["Merah warna", "Warna merah", "Tidak pasti", "Merah bukan warna"],
-    j: 0,
-    e: "Klasifikasi",
-  },
-  {
-    t: "9×9",
-    p: ["72", "80", "81", "90"],
-    j: 2,
-    e: "81",
-  },
-  {
-    t: "Deret: 5, 10, 20, 40, ...",
-    p: ["60", "70", "80", "90"],
-    j: 2,
-    e: "×2",
-  },
-  {
-    t: "Jika semua siswa belajar",
-    p: ["Belajar siswa", "Semua belajar siswa", "Tidak pasti", "Siswa belajar"],
-    j: 3,
-    e: "Makna langsung",
+    e: "Tidak cukup informasi.",
   },
 ];
 
